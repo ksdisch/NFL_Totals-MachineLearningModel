@@ -1,9 +1,9 @@
 # NFL Over/Under Prediction Machine Learning Model
 
 ## Topic
-- Binary prediction of whether the total points in an NFL game will be more or less than the total set by the oddsmakers.
+We will use binary classification/supervised machine learning to predict whether the total points in an NFL game will be more or less than the total set by the oddsmakers.
 
-## Reason We Selected This Topic
+## Reason(s) We Selected This Topic
 - 
 
 ## Data Source(s)
