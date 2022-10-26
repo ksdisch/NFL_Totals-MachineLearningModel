@@ -1,2 +1,2 @@
 # nfl-ml
-<img width="233" alt="Screenshot 2022-10-26 002259" src="https://user-images.githubusercontent.com/102050273/197938215-00c3d33b-9c8b-45d3-8abd-53723cb094cd.png">
+<img width="227" alt="Screenshot 2022-10-26 191007" src="https://user-images.githubusercontent.com/102050273/198155572-5bc456f1-1a34-49e5-96fa-ebffa647a027.png">
