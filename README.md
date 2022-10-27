@@ -7,7 +7,7 @@ We will use binary classification/supervised machine learning to predict whether
 As more states continue to legalize sports betting, the industry continues to grow. As such, being able to apply data analysis and machine learning to sports and betting continues to become a more valuable skillset. Along with being a marketable skill, our group are all big fans of sports, so this was a topic that piqued our interest.
 
 ## Data Source(s)
-- NFL scores and betting data - csv file found on Kaggle containing National Football League (NFL) game results dating back too 1966 with betting odds information since 1979. 
+- NFL scores and betting data - csv file found on Kaggle containing National Football League (NFL) game results dating back to 1966 with betting odds information since 1979. 
     - https://www.kaggle.com/datasets/tobycrabtree/nfl-scores-and-betting-data?select=spreadspoke_scores.csv
 
 ## Questions We Hope to Answer With the Data
