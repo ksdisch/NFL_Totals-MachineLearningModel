@@ -622,3 +622,112 @@ df_dvoa <- df_dvoa |>
 
 # write df to csv
 write.csv(df_dvoa, 'C:/Users/david/OneDrive/DataScience_BootCamp_22/Module20_FinalProject/Resources/cumulative_dvoa.csv')
+
+
+
+
+
+# SPREADSPOKE
+setwd('C:/Users/david/OneDrive/DataScience_BootCamp_22/Module20_FinalProject/Resources')
+df_totals <- read.csv('spreadspoke_scores.csv')
+
+df_totals <- df_totals |>
+  filter(schedule_season > 1992, schedule_season < 2022) |> # 1993-2021 seasons 
+  filter(schedule_playoff == FALSE) |> # no playoffs
+  filter(stadium_neutral == FALSE) |> # no neutral site
+  mutate(score_total = score_home + score_away, 
+         over_under_diff = score_total - over_under_line) |>
+  filter(over_under_diff != 0) |>
+  mutate(over_binary = ifelse(over_under_diff>0, 1, 0)) |> # remove pushes
+  mutate(team_home = ifelse(as.character(team_home) == 'Arizona Cardinals','ARI', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Atlanta Falcons','ATL', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Baltimore Ravens','BAL', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Buffalo Bills','BUF', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Carolina Panthers','CAR', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Chicago Bears','CHI', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Cincinnati Bengals','CIN', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Cleveland Browns','CLE', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Dallas Cowboys','DAL', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Denver Broncos','DEN', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Detroit Lions','DET', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Arizona Cardinals','ARI', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Green Bay Packers','GB', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Houston Oilers','TEN', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Houston Texans','HOU', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Indianapolis Colts','IND', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Jacksonville Jaguars','JAX', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Kansas City Chiefs','KC', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Las Vegas Raiders','LV', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Los Angeles Chargers','LAC', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Los Angeles Raiders','LV', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Los Angeles Rams','LAR', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Miami Dolphins','MIA', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Minnesota Vikings','MIN', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'New England Patriots','NE', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'New Orleans Saints','NO', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'New York Giants','NYG', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'New York Jets','NYJ', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Oakland Raiders','LV', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Philadelphia Eagles','PHI', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Phoenix Cardinals','ARI', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Pittsburgh Steelers','PIT', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'San Diego Chargers','LAC', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'San Francisco 49ers','SF', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Seattle Seahawks','SEA', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'St. Louis Rams','LAR', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Tampa Bay Buccaneers','TB', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Tennessee Titans','TEN', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Tennessee Oilers','TEN', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Washington Commanders','WAS', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Washington Football Team','WAS', as.character(team_home)),
+         team_home = ifelse(as.character(team_home) == 'Washington Redskins','WAS', as.character(team_home))) |>
+  mutate(team_away = ifelse(as.character(team_away) == 'Arizona Cardinals','ARI', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Atlanta Falcons','ATL', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Baltimore Ravens','BAL', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Buffalo Bills','BUF', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Carolina Panthers','CAR', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Chicago Bears','CHI', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Cincinnati Bengals','CIN', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Cleveland Browns','CLE', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Dallas Cowboys','DAL', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Denver Broncos','DEN', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Detroit Lions','DET', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Arizona Cardinals','ARI', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Green Bay Packers','GB', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Houston Oilers','TEN', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Houston Texans','HOU', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Indianapolis Colts','IND', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Jacksonville Jaguars','JAX', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Kansas City Chiefs','KC', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Las Vegas Raiders','LV', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Los Angeles Chargers','LAC', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Los Angeles Raiders','LV', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Los Angeles Rams','LAR', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Miami Dolphins','MIA', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Minnesota Vikings','MIN', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'New England Patriots','NE', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'New Orleans Saints','NO', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'New York Giants','NYG', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'New York Jets','NYJ', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Oakland Raiders','LV', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Philadelphia Eagles','PHI', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Phoenix Cardinals','ARI', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Pittsburgh Steelers','PIT', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'San Diego Chargers','LAC', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'San Francisco 49ers','SF', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Seattle Seahawks','SEA', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'St. Louis Rams','LAR', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Tampa Bay Buccaneers','TB', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Tennessee Titans','TEN', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Tennessee Oilers','TEN', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Washington Commanders','WAS', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Washington Football Team','WAS', as.character(team_away)),
+         team_away = ifelse(as.character(team_away) == 'Washington Redskins','WAS', as.character(team_away))) |>
+  mutate(team_home_full = str_c(team_home, schedule_season),
+         team_away_full = str_c(team_away, schedule_season)) |>
+  select(schedule_date, schedule_season, schedule_week, team_home, team_home_full, team_away_full, score_home, score_away,
+         score_total, over_under_line, over_under_diff, over_binary, spread_favorite)
+
+# write df to csv
+write.csv(df_totals, 'C:/Users/david/OneDrive/DataScience_BootCamp_22/Module20_FinalProject/Resources/totals_cleaned.csv')
+
