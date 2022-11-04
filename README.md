@@ -35,8 +35,17 @@ Considering AWS for storage and Postgres for management
 ### Machine Learning
 SciKitLearn is the ML library we'll be using to create our classification model that will attempt to correctly classify NFL games into hitting the over or under on their game total (as determined by betting markets). We've been testing several algorithms and comparing their results as we continue to improve and refine the dataset and model.
 
-### Dashboard
-An interactive dashboard will be built using Tableau so that the data can be easily digested and explored.
+### Technologies for Dashboard
+The following technologies will be used to create a dashboard as well as the visualizations within the dashboard.
+
+[Dashboard](https://public.tableau.com/app/profile/kyle.disch3835/viz/nfl-ml-dashboard/Dashboard1)
+
+#### Tableau
+Tableau is one of the most widely used data analysis and visualization tools in the world today. Tableau has become almost ubiquitous in today's professional world because it gives analysts the ability to create powerful analytic dashboards that tell a clear story and can be easily shared with others. Tableau is able to take any kind of data from nearly every system, and turn it into actionable insights with speed and ease.
+
+#### Dashboard Interactive Element(s)
+- The visualizations in the dashboard will have marker labels that pop-up when the user hovers over them. These markers give users deeper insight into individual data points.
+- User selected data and/or filters: At least one visualization in the dashboard will include a drop down list of features for the user to choose from. The user's choice will either be the main data for the visualization, or a filter that alters the visualization.This will allow users to explore the data themself in a straightforward and digestible manner.
 
 ### Model
 Data was read into the provisional Machine Learning model using a jupyter notebook.\
