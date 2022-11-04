@@ -54,3 +54,6 @@ Input data was preprocessed and fed into several Machine Learning Algorithms and
 
 <img width="227" alt="Screenshot 2022-10-26 191007" src="https://user-images.githubusercontent.com/102050273/198155572-5bc456f1-1a34-49e5-96fa-ebffa647a027.png">
 
+With the better results on the Linear Discriminant Analysis Classifier, trial and error uncovered several columns that made no difference to the accuracy of the model. By cleaning them from the dataset before passing it through the model, the accuracy of the LDA classifier on predicting that the over would hit improved by .01.
+
+The benefits of continuing to use the LDA classifier include its ease of use and speed. One of its limitations include its assumption that the data has a normal distribution. LDA classifiers are used in facial recognition and the medical field. (Source: https://www.knowledgehut.com/blog/data-science/linear-discriminant-analysis-for-machine-learning by Priyankur Sarkar)
