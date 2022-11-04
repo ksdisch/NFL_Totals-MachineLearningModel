@@ -40,8 +40,13 @@ The following technologies will be used to create a dashboard as well as the vis
 
 [Dashboard](https://public.tableau.com/app/profile/kyle.disch3835/viz/nfl-ml-dashboard/Dashboard1)
 
+[Storyboard](https://docs.google.com/presentation/d/1on4g_O0ENLiW1l6hNNdP82h1n6grY03nF5TZdy5VbZk/edit#slide=id.g17e48b405d8_0_65)
+
 #### Tableau
 Tableau is one of the most widely used data analysis and visualization tools in the world today. Tableau has become almost ubiquitous in today's professional world because it gives analysts the ability to create powerful analytic dashboards that tell a clear story and can be easily shared with others. Tableau is able to take any kind of data from nearly every system, and turn it into actionable insights with speed and ease.
+
+#### Google Slides
+Google slides will be used as the story board and will integrate elements from the Tableau dashboard.
 
 #### Dashboard Interactive Element(s)
 - The visualizations in the dashboard will have marker labels that pop-up when the user hovers over them. These markers give users deeper insight into individual data points.
