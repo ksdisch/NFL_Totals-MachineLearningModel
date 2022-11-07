@@ -27,10 +27,10 @@ Our group has been meeting in Zoom breakout rooms on Tuesdays and Thursdays from
 ## Technologies Used
 
 ### Data Cleaning and Analysis
-For the initial exploration of the data, Excel will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Pandas
+[An Attempt](https://github.com/ksdisch/nfl-ml/blob/main/Scraping.ipynb) was made to scrape data from Football Outsiders automatically. For now, the individual yearly tables were manually downloaded as csv files. The dataset from Kaggle containing the game information and totals did not require any scraping. The input data from Kaggle and Football Outsiders were joined and cleaned into cumulative csv's using an [r script](https://github.com/ksdisch/nfl-ml/blob/main/clean_transform_inputdata.R).  
 
 ### Database Storage
-Considering AWS for storage and Postgres for management
+The cumulative dvoa, cumulative pace, and cleaned game data were imported into pgAdmin and joined into one dataset using [postgreSQL](https://github.com/ksdisch/nfl-ml/blob/main/database_schema.sql). This dataset could be imported directly into the Machine Learning Model, but another [r script](https://github.com/ksdisch/nfl-ml/blob/main/feature_engineering.R) was used to engineer features. This dataset was exported to the Machine Learning Model.  
 
 ### Machine Learning
 SciKitLearn is the ML library we'll be using to create our classification model that will attempt to correctly classify NFL games into hitting the over or under on their game total (as determined by betting markets). We've been testing several algorithms and comparing their results as we continue to improve and refine the dataset and model.
