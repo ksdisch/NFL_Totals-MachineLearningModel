@@ -10,448 +10,190 @@ setwd('C:/Users/david/OneDrive/DataScience_BootCamp_22/Module20_FinalProject/Res
 # 32 team era
 # 2021
 df2021pace = read.csv('2021 NFL Pace_Time Stats.csv') # read csv
-df2021pace <- df2021pace |>
-  mutate(year = 2021) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2021pace$sec_play_total <- as.numeric(df2021pace$sec_play_total)
-df2021pace$sec_play_neutral <- as.numeric(df2021pace$sec_play_neutral)
-df2021pace <- df2021pace[c(0:32), ] # selecting relevant rows
-df2021pace <- df2021pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2021pace <- df2021pace |> mutate(year = 2021) # add unique year column
+df2021pace <- df2021pace[c(0:32), ] # select relevant rows from df
 
 # 2020
 df2020pace = read.csv('2020 NFL Pace_Time Stats.csv') # read csv
-df2020pace <- df2020pace |>
-  mutate(year = 2020) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2020pace$sec_play_total <- as.numeric(df2020pace$sec_play_total)
-df2020pace$sec_play_neutral <- as.numeric(df2020pace$sec_play_neutral)
-df2020pace <- df2020pace[c(0:32), ] # selecting relevant rows
-df2020pace <- df2020pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2020pace <- df2020pace |> mutate(year = 2020) # add unique year column
+df2020pace <- df2020pace[c(0:32), ] # select relevant rows from df
 
 # 2019
 df2019pace = read.csv('2019 NFL Pace_Time Stats.csv') # read csv
-df2019pace <- df2019pace |>
-  mutate(year = 2019) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2019pace$sec_play_total <- as.numeric(df2019pace$sec_play_total)
-df2019pace$sec_play_neutral <- as.numeric(df2019pace$sec_play_neutral)
-df2019pace <- df2019pace[c(0:32), ] # selecting relevant rows
-df2019pace <- df2019pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2019pace <- df2019pace |> mutate(year = 2019) # add unique year column
+df2019pace <- df2019pace[c(0:32), ] # select relevant rows from df
 
 # 2018
 df2018pace = read.csv('2018 NFL Pace_Time Stats.csv') # read csv
-df2018pace <- df2018pace |>
-  mutate(year = 2018) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2018pace$sec_play_total <- as.numeric(df2018pace$sec_play_total)
-df2018pace$sec_play_neutral <- as.numeric(df2018pace$sec_play_neutral)
-df2018pace <- df2018pace[c(0:32), ] # selecting relevant rows
-df2018pace <- df2018pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2018pace <- df2018pace |> mutate(year = 2018) # add unique year column
+df2018pace <- df2018pace[c(0:32), ] # select relevant rows from df
 
 # 2017
 df2017pace = read.csv('2017 NFL Pace_Time Stats.csv') # read csv
-df2017pace <- df2017pace |>
-  mutate(year = 2017) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2017pace$sec_play_total <- as.numeric(df2017pace$sec_play_total)
-df2017pace$sec_play_neutral <- as.numeric(df2017pace$sec_play_neutral)
-df2017pace <- df2017pace[c(0:32), ] # selecting relevant rows
-df2017pace <- df2017pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2017pace <- df2017pace |> mutate(year = 2017) # add unique year column
+df2017pace <- df2017pace[c(0:32), ] # select relevant rows from df
 
 # 2016
 df2016pace = read.csv('2016 NFL Pace_Time Stats.csv') # read csv
-df2016pace <- df2016pace |>
-  mutate(year = 2016) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2016pace$sec_play_total <- as.numeric(df2016pace$sec_play_total)
-df2016pace$sec_play_neutral <- as.numeric(df2016pace$sec_play_neutral)
-df2016pace <- df2016pace[c(0:32), ] # selecting relevant rows
-df2016pace <- df2016pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2016pace <- df2016pace |> mutate(year = 2016) # add unique year column
+df2016pace <- df2016pace[c(0:32), ] # select relevant rows from df
 
 # 2015
 df2015pace = read.csv('2015 NFL Pace_Time Stats.csv') # read csv
-df2015pace <- df2015pace |>
-  mutate(year = 2015) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2015pace$sec_play_total <- as.numeric(df2015pace$sec_play_total)
-df2015pace$sec_play_neutral <- as.numeric(df2015pace$sec_play_neutral)
-df2015pace <- df2015pace[c(0:32), ] # selecting relevant rows
-df2015pace <- df2015pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2015pace <- df2015pace |> mutate(year = 2015) # add unique year column
+df2015pace <- df2015pace[c(0:32), ] # select relevant rows from df
 
 # 2014
 df2014pace = read.csv('2014 NFL Pace_Time Stats.csv') # read csv
-df2014pace <- df2014pace |>
-  mutate(year = 2014) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2014pace$sec_play_total <- as.numeric(df2014pace$sec_play_total)
-df2014pace$sec_play_neutral <- as.numeric(df2014pace$sec_play_neutral)
-df2014pace <- df2014pace[c(0:32), ] # selecting relevant rows
-df2014pace <- df2014pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2014pace <- df2014pace |> mutate(year = 2014) # add unique year column
+df2014pace <- df2014pace[c(0:32), ] # select relevant rows from df
 
 # 2013
 df2013pace = read.csv('2013 NFL Pace_Time Stats.csv') # read csv
-df2013pace <- df2013pace |>
-  mutate(year = 2013) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2013pace$sec_play_total <- as.numeric(df2013pace$sec_play_total)
-df2013pace$sec_play_neutral <- as.numeric(df2013pace$sec_play_neutral)
-df2013pace <- df2013pace[c(0:32), ] # selecting relevant rows
-df2013pace <- df2013pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2013pace <- df2013pace |> mutate(year = 2013) # add unique year column
+df2013pace <- df2013pace[c(0:32), ] # select relevant rows from df
 
 # 2012
 df2012pace = read.csv('2012 NFL Pace_Time Stats.csv') # read csv
-df2012pace <- df2012pace |>
-  mutate(year = 2012) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2012pace$sec_play_total <- as.numeric(df2012pace$sec_play_total)
-df2012pace$sec_play_neutral <- as.numeric(df2012pace$sec_play_neutral)
-df2012pace <- df2012pace[c(0:32), ] # selecting relevant rows
-df2012pace <- df2012pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2012pace <- df2012pace |> mutate(year = 2012) # add unique year column
+df2012pace <- df2012pace[c(0:32), ] # select relevant rows from df
 
 # 2011
 df2011pace = read.csv('2011 NFL Pace_Time Stats.csv') # read csv
-df2011pace <- df2011pace |>
-  mutate(year = 2011) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2011pace$sec_play_total <- as.numeric(df2011pace$sec_play_total)
-df2011pace$sec_play_neutral <- as.numeric(df2011pace$sec_play_neutral)
-df2011pace <- df2011pace[c(0:32), ] # selecting relevant rows
-df2011pace <- df2011pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2011pace <- df2011pace |> mutate(year = 2011) # add unique year column
+df2011pace <- df2011pace[c(0:32), ] # select relevant rows from df
 
 # 2010
 df2010pace = read.csv('2010 NFL Pace_Time Stats.csv') # read csv
-df2010pace <- df2010pace |>
-  mutate(year = 2010) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2010pace$sec_play_total <- as.numeric(df2010pace$sec_play_total)
-df2010pace$sec_play_neutral <- as.numeric(df2010pace$sec_play_neutral)
-df2010pace <- df2010pace[c(0:32), ] # selecting relevant rows
-df2010pace <- df2010pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2010pace <- df2010pace |> mutate(year = 2010) # add unique year column
+df2010pace <- df2010pace[c(0:32), ] # select relevant rows from df
 
 # 2009
 df2009pace = read.csv('2009 NFL Pace_Time Stats.csv') # read csv
-df2009pace <- df2009pace |>
-  mutate(year = 2009) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2009pace$sec_play_total <- as.numeric(df2009pace$sec_play_total)
-df2009pace$sec_play_neutral <- as.numeric(df2009pace$sec_play_neutral)
-df2009pace <- df2009pace[c(0:32), ] # selecting relevant rows
-df2009pace <- df2009pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2009pace <- df2009pace |> mutate(year = 2009) # add unique year column
+df2009pace <- df2009pace[c(0:32), ] # select relevant rows from df
 
 # 2008
 df2008pace = read.csv('2008 NFL Pace_Time Stats.csv') # read csv
-df2008pace <- df2008pace |>
-  mutate(year = 2008) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2008pace$sec_play_total <- as.numeric(df2008pace$sec_play_total)
-df2008pace$sec_play_neutral <- as.numeric(df2008pace$sec_play_neutral)
-df2008pace <- df2008pace[c(0:32), ] # selecting relevant rows
-df2008pace <- df2008pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2008pace <- df2008pace |> mutate(year = 2008) # add unique year column
+df2008pace <- df2008pace[c(0:32), ] # select relevant rows from df
 
 # 2007
 df2007pace = read.csv('2007 NFL Pace_Time Stats.csv') # read csv
-df2007pace <- df2007pace |>
-  mutate(year = 2007) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2007pace$sec_play_total <- as.numeric(df2007pace$sec_play_total)
-df2007pace$sec_play_neutral <- as.numeric(df2007pace$sec_play_neutral)
-df2007pace <- df2007pace[c(0:32), ] # selecting relevant rows
-df2007pace <- df2007pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2007pace <- df2007pace |> mutate(year = 2007) # add unique year column
+df2007pace <- df2007pace[c(0:32), ] # select relevant rows from df
 
 # 2006
 df2006pace = read.csv('2006 NFL Pace_Time Stats.csv') # read csv
-df2006pace <- df2006pace |>
-  mutate(year = 2006) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2006pace$sec_play_total <- as.numeric(df2006pace$sec_play_total)
-df2006pace$sec_play_neutral <- as.numeric(df2006pace$sec_play_neutral)
-df2006pace <- df2006pace[c(0:32), ] # selecting relevant rows
-df2006pace <- df2006pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2006pace <- df2006pace |> mutate(year = 2006) # add unique year column
+df2006pace <- df2006pace[c(0:32), ] # select relevant rows from df
 
 # 2005
 df2005pace = read.csv('2005 NFL Pace_Time Stats.csv') # read csv
-df2005pace <- df2005pace |>
-  mutate(year = 2005) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2005pace$sec_play_total <- as.numeric(df2005pace$sec_play_total)
-df2005pace$sec_play_neutral <- as.numeric(df2005pace$sec_play_neutral)
-df2005pace <- df2005pace[c(0:32), ] # selecting relevant rows
-df2005pace <- df2005pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2005pace <- df2005pace |> mutate(year = 2005) # add unique year column
+df2005pace <- df2005pace[c(0:32), ] # select relevant rows from df
 
 # 2004
 df2004pace = read.csv('2004 NFL Pace_Time Stats.csv') # read csv
-df2004pace <- df2004pace |>
-  mutate(year = 2004) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2004pace$sec_play_total <- as.numeric(df2004pace$sec_play_total)
-df2004pace$sec_play_neutral <- as.numeric(df2004pace$sec_play_neutral)
-df2004pace <- df2004pace[c(0:32), ] # selecting relevant rows
-df2004pace <- df2004pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2004pace <- df2004pace |> mutate(year = 2004) # add unique year column
+df2004pace <- df2004pace[c(0:32), ] # select relevant rows from df
 
 # 2003
 df2003pace = read.csv('2003 NFL Pace_Time Stats.csv') # read csv
-df2003pace <- df2003pace |>
-  mutate(year = 2003) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2003pace$sec_play_total <- as.numeric(df2003pace$sec_play_total)
-df2003pace$sec_play_neutral <- as.numeric(df2003pace$sec_play_neutral)
-df2003pace <- df2003pace[c(0:32), ] # selecting relevant rows
-df2003pace <- df2003pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2003pace <- df2003pace |> mutate(year = 2003) # add unique year column
+df2003pace <- df2003pace[c(0:32), ] # select relevant rows from df
 
 # 2002
 df2002pace = read.csv('2002 NFL Pace_Time Stats.csv') # read csv
-df2002pace <- df2002pace |>
-  mutate(year = 2002) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2002pace$sec_play_total <- as.numeric(df2002pace$sec_play_total)
-df2002pace$sec_play_neutral <- as.numeric(df2002pace$sec_play_neutral)
-df2002pace <- df2002pace[c(0:32), ] # selecting relevant rows
-df2002pace <- df2002pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
-
+df2002pace <- df2002pace |> mutate(year = 2002) # add unique year column
+df2002pace <- df2002pace[c(0:32), ] # select relevant rows from df
 
 
 # 31 team era
 # 2001
 df2001pace = read.csv('2001 NFL Pace_Time Stats.csv') # read csv
-df2001pace <- df2001pace |>
-  mutate(year = 2001) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2001pace$sec_play_total <- as.numeric(df2001pace$sec_play_total)
-df2001pace$sec_play_neutral <- as.numeric(df2001pace$sec_play_neutral)
-df2001pace <- df2001pace[c(0:31), ] # selecting relevant rows
-df2001pace <- df2001pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2001pace <- df2001pace |> mutate(year = 2001) # add unique year column
+df2001pace <- df2001pace[c(0:31), ] # select relevant rows from df
 
 # 2000
 df2000pace = read.csv('2000 NFL Pace_Time Stats.csv') # read csv
-df2000pace <- df2000pace |>
-  mutate(year = 2000) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df2000pace$sec_play_total <- as.numeric(df2000pace$sec_play_total)
-df2000pace$sec_play_neutral <- as.numeric(df2000pace$sec_play_neutral)
-df2000pace <- df2000pace[c(0:31), ] # selecting relevant rows
-df2000pace <- df2000pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df2000pace <- df2000pace |> mutate(year = 2000) # add unique year column
+df2000pace <- df2000pace[c(0:31), ] # select relevant rows from df
 
 # 1999
 df1999pace = read.csv('1999 NFL Pace_Time Stats.csv') # read csv
-df1999pace <- df1999pace |>
-  mutate(year = 1999) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df1999pace$sec_play_total <- as.numeric(df1999pace$sec_play_total)
-df1999pace$sec_play_neutral <- as.numeric(df1999pace$sec_play_neutral)
-df1999pace <- df1999pace[c(0:31), ] # selecting relevant rows
-df1999pace <- df1999pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
-
+df1999pace <- df1999pace |> mutate(year = 1999) # add unique year column
+df1999pace <- df1999pace[c(0:31), ] # select relevant rows from df
 
 
 # 30 team era
 # 1998
 df1998pace = read.csv('1998 NFL Pace_Time Stats.csv') # read csv
-df1998pace <- df1998pace |>
-  mutate(year = 1998) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df1998pace$sec_play_total <- as.numeric(df1998pace$sec_play_total)
-df1998pace$sec_play_neutral <- as.numeric(df1998pace$sec_play_neutral)
-df1998pace <- df1998pace[c(0:30), ] # selecting relevant rows
-df1998pace <- df1998pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df1998pace <- df1998pace |> mutate(year = 1998) # add unique year column
+df1998pace <- df1998pace[c(0:30), ] # select relevant rows from df
 
 # 1997
 df1997pace = read.csv('1997 NFL Pace_Time Stats.csv') # read csv
-df1997pace <- df1997pace |>
-  mutate(year = 1997) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df1997pace$sec_play_total <- as.numeric(df1997pace$sec_play_total)
-df1997pace$sec_play_neutral <- as.numeric(df1997pace$sec_play_neutral)
-df1997pace <- df1997pace[c(0:30), ] # selecting relevant rows
-df1997pace <- df1997pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df1997pace <- df1997pace |> mutate(year = 1997) # add unique year column
+df1997pace <- df1997pace[c(0:30), ] # select relevant rows from df
 
 # 1996
 df1996pace = read.csv('1996 NFL Pace_Time Stats.csv') # read csv
-df1996pace <- df1996pace |>
-  mutate(year = 1996) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df1996pace$sec_play_total <- as.numeric(df1996pace$sec_play_total)
-df1996pace$sec_play_neutral <- as.numeric(df1996pace$sec_play_neutral)
-df1996pace <- df1996pace[c(0:30), ] # selecting relevant rows
-df1996pace <- df1996pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df1996pace <- df1996pace |> mutate(year = 1996) # add unique year column
+df1996pace <- df1996pace[c(0:30), ] # select relevant rows from df
 
 # 1995
 df1995pace = read.csv('1995 NFL Pace_Time Stats.csv') # read csv
-df1995pace <- df1995pace |>
-  mutate(year = 1995) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df1995pace$sec_play_total <- as.numeric(df1995pace$sec_play_total)
-df1995pace$sec_play_neutral <- as.numeric(df1995pace$sec_play_neutral)
-df1995pace <- df1995pace[c(0:30), ] # selecting relevant rows
-df1995pace <- df1995pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
-
+df1995pace <- df1995pace |> mutate(year = 1995) # add unique year column
+df1995pace <- df1995pace[c(0:30), ] # select relevant rows from df
 
 
 # 28 team era
 # 1994
 df1994pace = read.csv('1994 NFL Pace_Time Stats.csv') # read csv
-df1994pace <- df1994pace |>
-  mutate(year = 1994) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df1994pace$sec_play_total <- as.numeric(df1994pace$sec_play_total)
-df1994pace$sec_play_neutral <- as.numeric(df1994pace$sec_play_neutral)
-df1994pace <- df1994pace[c(0:28), ] # selecting relevant rows
-df1994pace <- df1994pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df1994pace <- df1994pace |> mutate(year = 1994) # add unique year column
+df1994pace <- df1994pace[c(0:28), ] # select relevant rows from df
 
 # 1993
 df1993pace = read.csv('1993 NFL Pace_Time Stats.csv') # read csv
-df1993pace <- df1993pace |>
-  mutate(year = 1993) |> # creating new column for year
-  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # select relevant columns
-  rename(sec_play_total = Sec.Play.total.,
-         sec_play_neutral = Sec.Play.situationneutral.) # rename columns
-#changing column data types
-df1993pace$sec_play_total <- as.numeric(df1993pace$sec_play_total)
-df1993pace$sec_play_neutral <- as.numeric(df1993pace$sec_play_neutral)
-df1993pace <- df1993pace[c(0:28), ] # selecting relevant rows
-df1993pace <- df1993pace |> 
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral)/(2)) # create composite pace column
+df1993pace <- df1993pace |> mutate(year = 1993) # add unique year column
+df1993pace <- df1993pace[c(0:28), ] # select relevant rows from df
 
 
+# combine and transform yearly dataframes
+df_pace <- rbind(df2021pace, df2020pace, df2019pace, df2018pace,
+                         df2017pace, df2016pace, df2015pace, df2014pace,
+                         df2013pace, df2012pace, df2011pace, df2010pace,
+                         df2009pace, df2008pace, df2007pace, df2006pace,
+                         df2005pace, df2004pace, df2003pace, df2002pace,
+                         df2001pace, df2000pace, df1999pace, df1998pace,
+                         df1997pace, df1996pace, df1995pace, df1994pace,
+                         df1993pace)
 
-# merge and clean combined df
-# combine yearly pace
-df_pace <-  rbind(df2021pace, df2020pace, df2019pace, df2018pace, df2017pace, df2016pace, df2015pace, 
-                  df2014pace, df2013pace, df2012pace, df2011pace, df2010pace, df2009pace, df2008pace,
-                  df2007pace, df2006pace, df2005pace, df2004pace, df2003pace, df2002pace, df2001pace,
-                  df2000pace, df1999pace, df1998pace, df1997pace, df1996pace, df1995pace, df1994pace, 
-                  df1993pace)
-# standardize abbreviations and make team code column with concat
 df_pace <- df_pace |>
-  mutate(Team = ifelse(as.character(Team) == 'CLE1', 'CLE', as.character(Team)),
-         Team = ifelse(as.character(Team) == 'HOIL', 'TEN', as.character(Team)),
-         Team = ifelse(as.character(Team) == 'LARD', 'LV', as.character(Team)),
-         Team = ifelse(as.character(Team) == 'OAK', 'LV', as.character(Team)),
-         Team = ifelse(as.character(Team) == 'PHO', 'ARI', as.character(Team)),
-         Team = ifelse(as.character(Team) == 'SD', 'LAC', as.character(Team)),
-         Team = ifelse(as.character(Team) == 'STL', 'LAR', as.character(Team))) |>
-  mutate(team_year = str_c(Team, year)) |>
-  rename(team = Team) |>
-  select(team, year, team_year, sec_play_total, sec_play_neutral, sec_play_composite)
+  select(Team, year, Sec.Play.total., Sec.Play.situationneutral.) |> # drop irrelevant columns
+  rename(sec_play_total = Sec.Play.total.,
+         sec_play_neutral = Sec.Play.situationneutral.,
+         team = Team,
+         schedule_season = year) |> # rename columns
+  mutate(team_year = str_c(team, schedule_season))
+df_pace$sec_play_total <- as.numeric(df_pace$sec_play_total) # change column data type
+df_pace$sec_play_neutral <- as.numeric(df_pace$sec_play_neutral) # change column data type
+df_pace <- df_pace |>
+  mutate(sec_play_composite = (sec_play_total + sec_play_neutral) / (2)) |> # create composite pacce column
+  mutate(team = ifelse(as.character(team) == 'CLE1', 'CLE', as.character(team)),
+       team = ifelse(as.character(team) == 'HOIL', 'TEN', as.character(team)),
+       team = ifelse(as.character(team) == 'LARD', 'LV', as.character(team)),
+       team = ifelse(as.character(team) == 'OAK', 'LV', as.character(team)),
+       team = ifelse(as.character(team) == 'PHO', 'ARI', as.character(team)),
+       team = ifelse(as.character(team) == 'SD', 'LAC', as.character(team)),
+       team = ifelse(as.character(team) == 'STL', 'LAR', as.character(team))) |> # fixing team abbrv
+  select(team, schedule_season, team_year, sec_play_total, sec_play_neutral, sec_play_composite) # reorder columns
 
 team_list_pace <- as.data.frame(unique(df_pace$team)) # check fixed team abbrv
 
 # write df to csv
 write.csv(df_pace, 'C:/Users/david/OneDrive/DataScience_BootCamp_22/Module20_FinalProject/Resources/cumulative_pace.csv')
-
-
-
 
 
 
@@ -615,14 +357,15 @@ df_dvoa <- df_dvoa |>
          Team = ifelse(as.character(Team) == 'SD', 'LAC', as.character(Team)),
          Team = ifelse(as.character(Team) == 'STL', 'LAR', as.character(Team))) |>
   mutate(team_year = str_c(Team, year)) |>
-  rename(team = Team) |>
-  select(team, year, team_year, total_dvoa, weighted_dvoa, offense_dvoa,
+  rename(team = Team, 
+         schedule_season = year) |>
+  select(team, schedule_season, team_year, total_dvoa, weighted_dvoa, offense_dvoa,
          defense_dvoa, special_dvoa, off_def_difference)
 
+team_list_dvoa <- as.data.frame(unique(df_dvoa$team)) # check fixed team abbrv
 
 # write df to csv
 write.csv(df_dvoa, 'C:/Users/david/OneDrive/DataScience_BootCamp_22/Module20_FinalProject/Resources/cumulative_dvoa.csv')
-
 
 
 
@@ -725,9 +468,8 @@ df_totals <- df_totals |>
          team_away = ifelse(as.character(team_away) == 'Washington Redskins','WAS', as.character(team_away))) |>
   mutate(team_home_full = str_c(team_home, schedule_season),
          team_away_full = str_c(team_away, schedule_season)) |>
-  select(schedule_date, schedule_season, schedule_week, team_home, team_home_full, team_away_full, score_home, score_away,
+  select(schedule_date, schedule_season, schedule_week, team_home, team_home_full, team_away, team_away_full, score_home, score_away,
          score_total, over_under_line, over_under_diff, over_binary, spread_favorite)
 
 # write df to csv
 write.csv(df_totals, 'C:/Users/david/OneDrive/DataScience_BootCamp_22/Module20_FinalProject/Resources/totals_cleaned.csv')
-
