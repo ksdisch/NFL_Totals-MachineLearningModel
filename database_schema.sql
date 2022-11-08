@@ -2,7 +2,7 @@
 CREATE TABLE cumulative_pace (
     "index" INT,
     team VARCHAR,
-    "year" INT,
+    schedule_season INT,
     team_year VARCHAR,
     sec_play_total NUMERIC,
     sec_play_neutral NUMERIC,
@@ -33,7 +33,7 @@ SELECT * FROM totals_cleaned
 CREATE TABLE cumulative_dvoa (
 "index" INT,
 team VARCHAR,
-"year" INT,
+schedule_season INT,
 team_year VARCHAR,
 total_dvoa NUMERIC,
 weighted_dvoa NUMERIC,
@@ -50,7 +50,7 @@ SELECT * FROM cumulative_dvoa
 
 -- Query to test merging of initial tables
 SELECT tc.index, tc.schedule_date, tc.schedule_season, tc.schedule_week, tc.team_home, 
-       tc.team_home_full, tc.team_away_full, tc.score_home, tc.score_away, tc.score_total, 
+       tc.team_home_full, tc.team_away, tc.team_away_full, tc.score_home, tc.score_away, tc.score_total, 
        tc.over_under_line, tc.over_under_diff, tc.over_binary, tc.spread_favorite,  cd.total_dvoa, 
        cd.weighted_dvoa, cd.offense_dvoa, cd.defense_dvoa, cd.special_dvoa, cd.off_def_difference, 
        cp.sec_play_total, cp.sec_play_neutral, cp.sec_play_composite 
@@ -60,7 +60,7 @@ WHERE cp.team_year = tc.team_home_full AND tc.team_home_full = cd.team_year ;
 -- Creating home table from query
 CREATE TABLE nfl_home_table AS (
 SELECT tc.index, tc.schedule_date, tc.schedule_season, tc.schedule_week, tc.team_home, 
-       tc.team_home_full, tc.team_away_full, tc.score_home, tc.score_away, tc.score_total, 
+       tc.team_home_full, tc.team_away, tc.team_away_full, tc.score_home, tc.score_away, tc.score_total, 
        tc.over_under_line, tc.over_under_diff, tc.over_binary, tc.spread_favorite,  cd.total_dvoa, 
        cd.weighted_dvoa, cd.offense_dvoa, cd.defense_dvoa, cd.special_dvoa, cd.off_def_difference, 
        cp.sec_play_total, cp.sec_play_neutral, cp.sec_play_composite 
@@ -70,7 +70,7 @@ WHERE cp.team_year = tc.team_home_full AND tc.team_home_full = cd.team_year) ;
 -- Creating away table from query
 CREATE TABLE nfl_away_table AS (
 SELECT tc.index, tc.schedule_date, tc.schedule_season, tc.schedule_week, tc.team_home, 
-       tc.team_home_full, tc.team_away_full, tc.score_home, tc.score_away, tc.score_total, 
+       tc.team_home_full, tc.team_away, tc.team_away_full, tc.score_home, tc.score_away, tc.score_total, 
        tc.over_under_line, tc.over_under_diff, tc.over_binary, tc.spread_favorite,  cd.total_dvoa, 
        cd.weighted_dvoa, cd.offense_dvoa, cd.defense_dvoa, cd.special_dvoa, cd.off_def_difference, 
        cp.sec_play_total, cp.sec_play_neutral, cp.sec_play_composite 
@@ -124,7 +124,7 @@ SELECT * FROM nfl_away_table
 -- Joining the home and away tables into final table
 CREATE TABLE nfl_complete_dataset AS (
 SELECT b.index, b.schedule_date, b.schedule_season, b.schedule_week, 
-       b.team_home, b.team_home_full, b.team_away_full, b.score_home, 
+       b.team_home, b.team_home_full, b.team_away, b.team_away_full, b.score_home, 
        b.score_away, b.score_total, b.over_under_line, b.over_under_diff, 
        b.over_binary, b.spread_favorite, b.home_total_dvoa, b.home_weighted_dvoa, 
        b.home_offense_dvoa, b.home_defense_dvoa, b.home_special_dvoa, b.home_off_def_difference, 

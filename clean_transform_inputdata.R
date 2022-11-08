@@ -344,7 +344,7 @@ df_dvoa$defense_dvoa <- gsub('%', '', df_dvoa$defense_dvoa)
 df_dvoa$special_dvoa <- gsub('%', '', df_dvoa$special_dvoa)
 df_dvoa[,4:7] <- sapply(df_dvoa[,4:7],as.numeric)
 df_dvoa <- df_dvoa |> 
-  mutate(off_def_difference = offense_dvoa - special_dvoa) # create derived column
+  mutate(off_def_difference = offense_dvoa + defense_dvoa) # create derived column
 
 # standardizing team abbrv
 df_dvoa <- df_dvoa |>
