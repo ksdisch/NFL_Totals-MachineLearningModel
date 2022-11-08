@@ -7,16 +7,12 @@ We will use binary classification/supervised machine learning to predict whether
 As more states continue to legalize sports betting, the industry continues to grow. As such, being able to apply data analysis and machine learning to sports and betting continues to become a more valuable skillset. Along with being a marketable skill, our group are all big fans of sports, so this was a topic that piqued our interest.
 
 ## Data Source(s)
-- spreadspoke_scores.csv - csv file found on Kaggle containing National Football League (NFL) game results dating back to 1966 with betting odds information since 1979. 
-    - https://www.kaggle.com/datasets/tobycrabtree/nfl-scores-and-betting-data?select=spreadspoke_scores.csv
-- Cumulative_Defensive_Pace.xlsx
-    - Obtained from footballoutsiders.com
-- Cumulative_DVOA.xlsx
-    - Obtained from footballoutsiders.com
-- Cumulative_Offensive_Pace.xlsx
-    - Obtained from footballoutsiders.com
-- Cumulative_Total_Pace.xlsx
-    - Obtained from footballoutsiders.com
+- [spreadspoke_scores.csv](https://github.com/ksdisch/nfl-ml/blob/main/Resources/spreadspoke_scores.csv) - csv file found on Kaggle containing National Football League (NFL) game results dating back to 1966 with betting odds information since 1979. 
+    - Data obtained from [Kaggle Datasets](https://www.kaggle.com/datasets/tobycrabtree/nfl-scores-and-betting-data?select=spreadspoke_scores.csv)
+- [Cumulative DVOA](https://github.com/ksdisch/nfl-ml/blob/main/Resources/cumulative_dvoa.csv) csv file
+    - Data obtained from [Football Outsiders](https://www.footballoutsiders.com/stats/nfl/team-efficiency/2022/regular)
+- [Cumulative Pace](https://github.com/ksdisch/nfl-ml/blob/main/Resources/cumulative_pace.csv) csv file
+    - Data obtained from [Football Outsiders Pace page](https://www.footballoutsiders.com/stats/nfl/pace-stats/2022)
 
 ## Questions We Hope to Answer With the Data
 - Will a given NFL game's total score go over or fall under the total set by the oddsmakers?
