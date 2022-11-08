@@ -29,7 +29,7 @@ Our group has been meeting in Zoom breakout rooms on Tuesdays and Thursdays from
 The cumulative dvoa, cumulative pace, and cleaned game data were imported into pgAdmin and joined into one dataset using [postgreSQL](https://github.com/ksdisch/nfl-ml/blob/main/database_schema.sql). This dataset could be imported directly into the Machine Learning Model, but another [r script](https://github.com/ksdisch/nfl-ml/blob/main/feature_engineering.R) was used to engineer features. This dataset was exported to the Machine Learning Model.  
 
 ### Machine Learning
-SciKitLearn is the ML library we'll be using to create our classification model that will attempt to correctly classify NFL games into hitting the over or under on their game total (as determined by betting markets). We've been testing several algorithms and comparing their results as we continue to improve and refine the dataset and model.
+[SciKitLearn](https://scikit-learn.org/stable/) is the ML library we'll be using to create our classification model that will attempt to correctly classify NFL games into hitting the over or under on their game total (as determined by betting markets). We've been testing several algorithms and comparing their results as we continue to improve and refine the dataset and model.
 
 ### Technologies for Dashboard
 The following technologies will be used to create a dashboard as well as the visualizations within the dashboard.
@@ -49,11 +49,11 @@ Google slides will be used as the story board and will integrate elements from t
 - User selected data and/or filters: At least one visualization in the dashboard will include a drop down list of features for the user to choose from. The user's choice will either be the main data for the visualization, or a filter that alters the visualization.This will allow users to explore the data themself in a straightforward and digestible manner.
 
 ### Model
-Data was read into the provisional Machine Learning model using a jupyter notebook.\
-Output labels were defined based on if the actual final score was higher than the Over Under Total (1 = Over, 0 = Under).\
-Input data was preprocessed and fed into several Machine Learning Algorithms and compared based on their Accuracy Scores.
+Data was read into the Machine Learning model using a jupyter notebook. Output labels were defined based on if the actual final score was higher than the Over Under Total (1 = Over, 0 = Under). Input data was preprocessed and fed into several Machine Learning Algorithms and compared based on their Accuracy Scores.
 
-<img width="227" alt="Screenshot 2022-10-26 191007" src="https://user-images.githubusercontent.com/102050273/198155572-5bc456f1-1a34-49e5-96fa-ebffa647a027.png">
+<img width="251" alt="Screenshot 2022-11-08 131419" src="https://user-images.githubusercontent.com/102050273/200646441-8e47fea9-3566-4350-acbc-6ce9ff707802.png">
+
+9 of the 20 model tested reached an arbitrary limit of 55% Accuracy Score. The best performing models were the Ridge Classifier, Linear Support Vector Classifier, and the Logistic Classifier. Each of which surpassed 57% Accuracy Score.
 
 With the better results on the Linear Discriminant Analysis Classifier, trial and error uncovered several columns that made no difference to the accuracy of the model. By cleaning them from the dataset before passing it through the model, the accuracy of the LDA classifier on predicting that the over would hit improved by .01.
 
