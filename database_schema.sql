@@ -18,6 +18,7 @@ CREATE TABLE totals_cleaned (
     schedule_week INT,
     team_home VARCHAR,
     team_home_full VARCHAR,
+    team_away VARCHAR,
     team_away_full VARCHAR,
     score_home INT,
     score_away INT,
