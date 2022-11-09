@@ -1,6 +1,8 @@
 # Ignoring old notebooks, scripts, or datasources
 #OverUnderLDAmodel.ipynb
 # Scraping.ipynb
+# Technologies_Used.docx
+# dashboard_tech.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
