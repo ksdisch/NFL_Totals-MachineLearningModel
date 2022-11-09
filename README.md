@@ -17,9 +17,6 @@ As more states continue to legalize sports betting, the industry continues to gr
 ## Questions We Hope to Answer With the Data
 - Will a given NFL game's total score go over or fall under the total set by the oddsmakers?
 
-## Communication Protocols
-Our group has been meeting in Zoom breakout rooms on Tuesdays and Thursdays from 6 PM - 8 PM. To supplement these meetings, we also communicate throughout the week in a group on Slack.
-
 ## Technologies Used
 
 ### Data Cleaning and Analysis
