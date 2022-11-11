@@ -172,8 +172,3 @@ SELECT "index", schedule_date, schedule_season, schedule_week, team_home, team_h
         (dvoa_home_offense_matchup + dvoa_away_offense_matchup) AS offense_matchup_cumulative, 
         (SELECT ABS (dvoa_home_offense_matchup - dvoa_away_offense_matchup) AS offense_matchup_difference)
 FROM intermediate_nfl_table);
-
-
------------------------------------------
--- Final table exported as sqlite file --
------------------------------------------
