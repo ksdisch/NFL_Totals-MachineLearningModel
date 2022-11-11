@@ -48,19 +48,19 @@ Tableau is one of the most widely used data analysis and visualization tools in 
 Please click this [link](https://docs.google.com/presentation/d/1on4g_O0ENLiW1l6hNNdP82h1n6grY03nF5TZdy5VbZk/edit?usp=sharing) to view the Google Slides draft presentation: 
 
 #### Dashboard Interactive Element(s)
-- The visualizations in the dashboard will have marker labels that pop-up when the user hovers over them. These markers give users deeper insight into individual data points.
-- User selected data and/or filters: At least one visualization in the dashboard will include a drop down list of features for the user to choose from. The user's choice will either be the main data for the visualization, or a filter that alters the visualization.This will allow users to explore the data themself in a straightforward and digestible manner.
+Please click this [link](https://public.tableau.com/app/profile/kyle.disch3835/viz/nfl-ml-story/Story1?publish=yes) to view the Tableau interactive dashboard.
 
 ### Model
 Data was read into the Machine Learning model using a Jupyter notebook. Output labels were defined based on if the actual final score was higher than the Over Under Total (1 = Over, 0 = Under). Input data was preprocessed and fed into several Machine Learning Algorithms and compared based on their Accuracy Scores.
 
 <img width="251" alt="Screenshot 2022-11-08 131419" src="https://user-images.githubusercontent.com/102050273/200646441-8e47fea9-3566-4350-acbc-6ce9ff707802.png">
 
-9 of the 20 models tested reached an arbitrary limit of 55% Accuracy Score. The best performing models were the Ridge Classifier, Linear Support Vector Classifier, and the Logistic Classifier. Each of which surpassed 57% Accuracy Score.
-
-With the better results on the Linear Discriminant Analysis Classifier, trial and error uncovered several columns that made no difference to the accuracy of the model. By cleaning them from the dataset before passing it through the model, the accuracy of the LDA classifier on predicting that the over would hit improved by .01.
+2 of the 20 models tested reached an arbitrary limit of 55% Accuracy Score. Those models were the Ridge Classifier & the Linear Discriminant Analysis Classifier.
 
 The benefits of continuing to use the LDA classifier include its ease of use and speed. One of its limitations include its assumption that the data has a normal distribution. LDA classifiers are used in facial recognition and the medical field. ([Source](https://www.knowledgehut.com/blog/data-science/linear-discriminant-analysis-for-machine-learning) by Priyankur Sarkar)
+
+The benefits of continuing to use the Ridge Classifier include its ability to help reduce sensitivity to noisy data (like a game where 22 people run all over a field in pursuit of an oblong shaped pigskin) by penalizing the coefficients of highly correlated variables. One of its limitations for our purposes would be that it may require more data to be highly accurate than a sport with only 500+ datapoints per year can provide. ([Source](https://vitalflux.com/ridge-regression-concepts-python-example/) by Ajitesh Kumar)
+
 
 #### Feature Engineering & Selection
 The team was able to apply some of its deep knowledge and interest in NFL data when it came time to engineer and select the features to be used in the model. For instance, DVOA and pace data came with multiple columns looking at those statistics from several angles for both teams in a given matchup, including cumulative or weighted columns. In some cases, we could intuit that there was no need to ask the model to include some base features when the cumulative or weighted features already addressed them. To be certain, during segment two of the project, several suspect features were isolated and removed from the model testing and the accuracy scores were compared to the results of the model when it had included them. For results that showed no change to accuracy, or even an improvement, those features were kept out of the final model.
@@ -68,3 +68,5 @@ The team was able to apply some of its deep knowledge and interest in NFL data w
 #### Training Data
 The data was split into training and testing sets using the Sklearn train_test_split function. By default, this function assigns 75% of the dataset to be used during the training of the model while the remaining 25% is used to test the model.
 
+### Results of the Model
+Our model was able to show an accuracy of 55%. Per the Action Network, a prominent sports betting website, a profitable bettor must win at least 52.4% of their bets. The Action Network would consider winning at a 55% rate to be "a good year". ([Source](https://www.actionnetwork.com/legal-online-sports-betting/sports-betting-survey-gender-income-winning-percentage-may-24))
