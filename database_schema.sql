@@ -143,3 +143,37 @@ SELECT COUNT (*)
 FROM cumulative_pace
 SELECT COUNT (*)
 FROM cumulative_dvoa
+
+-- Creating initial table with engineered feature
+CREATE TABLE intermediate_nfl_table AS (
+SELECT "index", schedule_date, schedule_season, schedule_week, team_home, team_home_full, team_away_full, score_home, score_away, score_total,
+        over_under_line, over_under_diff, over_binary, spread_favorite, home_total_dvoa, home_weighted_dvoa, home_offense_dvoa, home_defense_dvoa,
+        home_special_dvoa, home_off_def_difference, home_sec_play_total, home_sec_play_neutral, home_sec_play_composite, away_total_dvoa, away_weighted_dvoa,
+        away_offense_dvoa, away_defense_dvoa, away_special_dvoa, away_off_def_difference, away_sec_play_total, away_sec_play_neutral, away_sec_play_composite, 
+        (home_total_dvoa + away_total_dvoa) AS dvoa_total_cumulative, (SELECT ABS (home_total_dvoa - away_total_dvoa) AS dvoa_total_difference), 
+        (home_weighted_dvoa + away_weighted_dvoa) AS dvoa_weighted_cumulative, (SELECT ABS (home_weighted_dvoa - away_weighted_dvoa) AS dvoa_weighted_difference), 
+        (home_offense_dvoa + away_offense_dvoa) AS dvoa_offense_cumulative, (SELECT ABS (home_offense_dvoa - away_offense_dvoa) AS dvoa_offense_difference), 
+        (home_defense_dvoa + away_defense_dvoa) AS dvoa_defense_cumulative, (SELECT ABS (home_defense_dvoa - away_defense_dvoa) AS dvoa_defense_difference), 
+        (home_special_dvoa + away_special_dvoa) AS dvoa_special_cumulative, (SELECT ABS (home_special_dvoa - away_special_dvoa) AS dvoa_special_difference),
+        (home_offense_dvoa + away_defense_dvoa) AS dvoa_home_offense_matchup, (away_offense_dvoa + home_defense_dvoa) AS dvoa_away_offense_matchup, 
+        ((home_sec_play_composite + away_sec_play_composite)/2) AS composite_pace_average, (SELECT ABS (home_sec_play_composite - away_sec_play_composite) AS composite_pace_difference),
+        (home_off_def_difference + away_off_def_difference) AS dvoa_offdefdiff_cumulative, (SELECT ABS (home_off_def_difference - away_off_def_difference) AS dvoa_offdefdiff_difference)
+FROM nfl_complete_dataset );
+
+-- Creating additional features on final table
+CREATE TABLE nfl_ml_dataset AS (
+SELECT "index", schedule_date, schedule_season, schedule_week, team_home, team_home_full, team_away_full, score_home, score_away, score_total,
+        over_under_line, over_under_diff, over_binary, spread_favorite, home_total_dvoa, home_weighted_dvoa, home_offense_dvoa, home_defense_dvoa,
+        home_special_dvoa, home_off_def_difference, home_sec_play_total, home_sec_play_neutral, home_sec_play_composite, away_total_dvoa, away_weighted_dvoa,
+        away_offense_dvoa, away_defense_dvoa, away_special_dvoa, away_off_def_difference, away_sec_play_total, away_sec_play_neutral, away_sec_play_composite, 
+        dvoa_total_cumulative, dvoa_total_difference, dvoa_weighted_cumulative, dvoa_weighted_difference, dvoa_offense_cumulative, dvoa_offense_difference, 
+        dvoa_defense_cumulative, dvoa_defense_difference, dvoa_special_cumulative, dvoa_special_difference, dvoa_home_offense_matchup, dvoa_away_offense_matchup, 
+        composite_pace_average, composite_pace_difference, dvoa_offdefdiff_cumulative, dvoa_offdefdiff_difference, 
+        (dvoa_home_offense_matchup + dvoa_away_offense_matchup) AS offense_matchup_cumulative, 
+        (SELECT ABS (dvoa_home_offense_matchup - dvoa_away_offense_matchup) AS offense_matchup_difference)
+FROM intermediate_nfl_table);
+
+
+-----------------------------------------
+-- Final table exported as sqlite file --
+-----------------------------------------
