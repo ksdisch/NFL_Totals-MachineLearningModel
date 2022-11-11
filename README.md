@@ -33,11 +33,6 @@ The cumulative DVOA, cumulative pace (how quickly teams snap the ball), and clea
 [SciKitLearn](https://scikit-learn.org/stable/) is the ML library we'll be using to create our classification model that will attempt to correctly classify NFL games into hitting the over or under on their game total (as determined by betting markets). We've been testing several algorithms and comparing their results as we continue to improve and refine the dataset and model.
 
 ### Technologies for Dashboard
-The following technologies will be used to create a dashboard as well as the visualizations within the dashboard.
-
-[Dashboard](https://public.tableau.com/app/profile/kyle.disch3835/viz/nfl-ml-dashboard/Dashboard1)
-
-[Storyboard](https://docs.google.com/presentation/d/1on4g_O0ENLiW1l6hNNdP82h1n6grY03nF5TZdy5VbZk/edit#slide=id.g17e48b405d8_0_65)
 
 #### Tableau
 Tableau is one of the most widely used data analysis and visualization tools in the world today. Tableau has become almost ubiquitous in today's professional world because it gives analysts the ability to create powerful analytic dashboards that tell a clear story and can be easily shared with others. Tableau is able to take any kind of data from nearly every system, and turn it into actionable insights with speed and ease.
