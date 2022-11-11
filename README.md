@@ -46,13 +46,17 @@ Please click this [link](https://public.tableau.com/app/profile/kyle.disch3835/v
 ### Model
 Data was read into the Machine Learning model using a Jupyter notebook. Output labels were defined based on if the actual final score was higher than the Over Under Total (1 = Over, 0 = Under). Input data was preprocessed and fed into several Machine Learning Algorithms and compared based on their Accuracy Scores.
 
-<img width="251" alt="Screenshot 2022-11-08 131419" src="https://user-images.githubusercontent.com/102050273/200646441-8e47fea9-3566-4350-acbc-6ce9ff707802.png">
+<img width="167" alt="Screenshot 2022-11-11 155647" src="https://user-images.githubusercontent.com/102050273/201429592-d7c99833-2581-4979-a0a3-14d088084b38.png">
 
-2 of the 20 models tested reached an arbitrary limit of 55% Accuracy Score. Those models were the Ridge Classifier & the Linear Discriminant Analysis Classifier.
+4 of the 20 models tested reached an arbitrary limit of 55% Accuracy Score. Those models were the Logistic Classifier, Ridge Classifier, Linear Discriminant Analysis Classifier, and the Linear Support Vector Machine (SVM) Classifier.
+
+The benefits of continuing to use the Logistic Regression Classifier include its ease of implementation, interpretation, and efficiency during training. Our use case also benefits from being able to easily extend the number of classes (multinomial regression). One of its limitations include its assumption of linearity between the dependent and independent variable.
+
+The benefits of continuing to use the Ridge Classifier include its ability to help reduce sensitivity to noisy data (like a game where 22 people run all over a field in pursuit of an oblong shaped pigskin) by penalizing the coefficients of highly correlated variables. One of its limitations for our purposes would be that it may require more data to be highly accurate than a sport with only 500+ datapoints per year can provide. ([Source](https://vitalflux.com/ridge-regression-concepts-python-example/) by Ajitesh Kumar)
 
 The benefits of continuing to use the LDA classifier include its ease of use and speed. One of its limitations include its assumption that the data has a normal distribution. LDA classifiers are used in facial recognition and the medical field. ([Source](https://www.knowledgehut.com/blog/data-science/linear-discriminant-analysis-for-machine-learning) by Priyankur Sarkar)
 
-The benefits of continuing to use the Ridge Classifier include its ability to help reduce sensitivity to noisy data (like a game where 22 people run all over a field in pursuit of an oblong shaped pigskin) by penalizing the coefficients of highly correlated variables. One of its limitations for our purposes would be that it may require more data to be highly accurate than a sport with only 500+ datapoints per year can provide. ([Source](https://vitalflux.com/ridge-regression-concepts-python-example/) by Ajitesh Kumar)
+The benefits of continuing to use the Linear SVM Classifier include its effectiveness in high dimensional spaces and that it is relatively memory efficient. One of its limitations is that it generally does not perform well with a noisy dataset that has overlapping features.
 
 
 #### Feature Engineering & Selection
@@ -62,4 +66,4 @@ The team was able to apply some of its deep knowledge and interest in NFL data w
 The data was split into training and testing sets using the Sklearn train_test_split function. By default, this function assigns 75% of the dataset to be used during the training of the model while the remaining 25% is used to test the model.
 
 ### Results of the Model
-Our model was able to show an accuracy of 55%. Per the Action Network, a prominent sports betting website, a profitable bettor must win at least 52.4% of their bets. The Action Network would consider winning at a 55% rate to be "a good year". ([Source](https://www.actionnetwork.com/legal-online-sports-betting/sports-betting-survey-gender-income-winning-percentage-may-24))
+Our model was able to show an accuracy of 56%. Per the Action Network, a prominent sports betting website, a profitable bettor must win at least 52.4% of their bets. The Action Network would consider winning at a 56% rate to be "a good year". ([Source](https://www.actionnetwork.com/legal-online-sports-betting/sports-betting-survey-gender-income-winning-percentage-may-24))
