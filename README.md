@@ -56,8 +56,15 @@ Data was read into the Machine Learning model using a Jupyter notebook. Output l
 
 <img width="251" alt="Screenshot 2022-11-08 131419" src="https://user-images.githubusercontent.com/102050273/200646441-8e47fea9-3566-4350-acbc-6ce9ff707802.png">
 
-9 of the 20 model tested reached an arbitrary limit of 55% Accuracy Score. The best performing models were the Ridge Classifier, Linear Support Vector Classifier, and the Logistic Classifier. Each of which surpassed 57% Accuracy Score.
+9 of the 20 models tested reached an arbitrary limit of 55% Accuracy Score. The best performing models were the Ridge Classifier, Linear Support Vector Classifier, and the Logistic Classifier. Each of which surpassed 57% Accuracy Score.
 
 With the better results on the Linear Discriminant Analysis Classifier, trial and error uncovered several columns that made no difference to the accuracy of the model. By cleaning them from the dataset before passing it through the model, the accuracy of the LDA classifier on predicting that the over would hit improved by .01.
 
 The benefits of continuing to use the LDA classifier include its ease of use and speed. One of its limitations include its assumption that the data has a normal distribution. LDA classifiers are used in facial recognition and the medical field. ([Source](https://www.knowledgehut.com/blog/data-science/linear-discriminant-analysis-for-machine-learning) by Priyankur Sarkar)
+
+#### Feature Engineering & Selection
+The team was able to apply some of its deep knowledge and interest in NFL data when it came time to engineer and select the features to be used in the model. For instance, DVOA and pace data came with multiple columns looking at those statistics from several angles for both teams in a given matchup, including cumulative or weighted columns. In some cases, we could intuit that there was no need to ask the model to include some base features when the cumulative or weighted features already addressed them. To be certain, during segment two of the project, several suspect features were isolated and removed from the model testing and the accuracy scores were compared to the results of the model when it had included them. For results that showed no change to accuracy, or even an improvement, those features were kept out of the final model.
+
+#### Training Data
+The data was split into training and testing sets using the Sklearn train_test_split function. By default, this function assigns 75% of the dataset to be used during the training of the model while the remaining 25% is used to test the model.
+
