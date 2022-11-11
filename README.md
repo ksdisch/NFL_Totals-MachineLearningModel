@@ -46,7 +46,7 @@ Please click this [link](https://public.tableau.com/app/profile/kyle.disch3835/v
 ### Model
 Data was read into the Machine Learning model using a Jupyter notebook. Output labels were defined based on if the actual final score was higher than the Over Under Total (1 = Over, 0 = Under). Input data was preprocessed and fed into several Machine Learning Algorithms and compared based on their Accuracy Scores.
 
-<img width="167" alt="Screenshot 2022-11-11 155647" src="https://user-images.githubusercontent.com/102050273/201429592-d7c99833-2581-4979-a0a3-14d088084b38.png">
+<img width="218" alt="Screenshot 2022-11-11 155647" src="https://user-images.githubusercontent.com/102050273/201431901-26465a23-4abb-41ae-b78b-b1b50ded69b1.png">
 
 4 of the 20 models tested reached an arbitrary limit of 55% Accuracy Score. Those models were the Logistic Classifier, Ridge Classifier, Linear Discriminant Analysis Classifier, and the Linear Support Vector Machine (SVM) Classifier.
 
