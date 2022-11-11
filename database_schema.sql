@@ -144,7 +144,7 @@ FROM cumulative_pace
 SELECT COUNT (*)
 FROM cumulative_dvoa
 
--- Creating initial table with engineered feature
+-- Creating initial table with engineered features
 CREATE TABLE intermediate_nfl_table AS (
 SELECT "index", schedule_date, schedule_season, schedule_week, team_home, team_home_full, team_away_full, score_home, score_away, score_total,
         over_under_line, over_under_diff, over_binary, spread_favorite, home_total_dvoa, home_weighted_dvoa, home_offense_dvoa, home_defense_dvoa,
