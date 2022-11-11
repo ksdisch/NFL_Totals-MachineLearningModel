@@ -51,7 +51,7 @@ Please click this [link](https://public.tableau.com/app/profile/kyle.disch3835/v
 ### Model
 Data was read into the Machine Learning model using a Jupyter notebook. Output labels were defined based on if the actual final score was higher than the Over Under Total (1 = Over, 0 = Under). Input data was preprocessed and fed into several Machine Learning Algorithms and compared based on their Accuracy Scores.
 
-<img width="251" alt="Screenshot 2022-11-08 131419" src="https://user-images.githubusercontent.com/102050273/200646441-8e47fea9-3566-4350-acbc-6ce9ff707802.png">
+![image](https://user-images.githubusercontent.com/107162310/201263003-6cbfdad8-d680-43cc-bd1e-cd35fa5e2c45.png)
 
 2 of the 20 models tested reached an arbitrary limit of 55% Accuracy Score. Those models were the Ridge Classifier & the Linear Discriminant Analysis Classifier.
 
