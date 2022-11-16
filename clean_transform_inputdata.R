@@ -180,7 +180,7 @@ df_pace <- df_pace |>
 df_pace$sec_play_total <- as.numeric(df_pace$sec_play_total) # change column data type
 df_pace$sec_play_neutral <- as.numeric(df_pace$sec_play_neutral) # change column data type
 df_pace <- df_pace |>
-  mutate(sec_play_composite = (sec_play_total + sec_play_neutral) / (2)) |> # create composite pacce column
+  mutate(sec_play_composite = (sec_play_total + sec_play_neutral) / (2)) |> # create composite pace column
   mutate(team = ifelse(as.character(team) == 'CLE1', 'CLE', as.character(team)),
        team = ifelse(as.character(team) == 'HOIL', 'TEN', as.character(team)),
        team = ifelse(as.character(team) == 'LARD', 'LV', as.character(team)),
@@ -344,7 +344,7 @@ df_dvoa$defense_dvoa <- gsub('%', '', df_dvoa$defense_dvoa)
 df_dvoa$special_dvoa <- gsub('%', '', df_dvoa$special_dvoa)
 df_dvoa[,4:7] <- sapply(df_dvoa[,4:7],as.numeric)
 df_dvoa <- df_dvoa |> 
-  mutate(off_def_difference = offense_dvoa + defense_dvoa) # create derived column
+  mutate(off_def_difference = offense_dvoa - (defense_dvoa * -1)) # create derived column
 
 # standardizing team abbrv
 df_dvoa <- df_dvoa |>
