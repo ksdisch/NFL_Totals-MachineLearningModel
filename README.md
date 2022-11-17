@@ -10,6 +10,8 @@ As more states continue to legalize sports betting, the industry continues to gr
 
 ## Questions We Hope to Answer With the Data
 - Will a given NFL game's total score go over or fall under the total set by the oddsmakers?
+- Can we build a model accurate enough that a bettor who followed its results could overcome the inherent advantage sportsbooks have (also known as the "juice" or "vigorish") and be profitable over time?
+
 
 ## Data Source(s)
 - [spreadspoke_scores.csv](https://github.com/ksdisch/nfl-ml/blob/main/Resources/spreadspoke_scores.csv) - csv file found on Kaggle containing National Football League (NFL) game results dating back to 1966 with betting odds information since 1979. 
@@ -60,7 +62,6 @@ The benefits of continuing to use the LDA classifier include its ease of use and
 
 The benefits of continuing to use the Linear SVM Classifier include its effectiveness in high dimensional spaces and that it is relatively memory efficient. One of its limitations is that it generally does not perform well with a noisy dataset that has overlapping features.
 
-
 #### Feature Engineering & Selection
 The team was able to apply some of its deep knowledge and interest in NFL data when it came time to engineer and select the features to be used in the model. For instance, DVOA and pace data came with multiple columns looking at those statistics from several angles for both teams in a given matchup, including cumulative or weighted columns. In some cases, we could intuit that there was no need to ask the model to include some base features when the cumulative or weighted features already addressed them. To be certain, during segment two of the project, several suspect features were isolated and removed from the model testing and the accuracy scores were compared to the results of the model when it had included them. For results that showed no change to accuracy, or even an improvement, those features were kept out of the final model.
 
@@ -68,4 +69,9 @@ The team was able to apply some of its deep knowledge and interest in NFL data w
 The data was split into training and testing sets using the Sklearn train_test_split function. By default, this function assigns 75% of the dataset to be used during the training of the model while the remaining 25% is used to test the model.
 
 ### Results of the Model
-Our model was able to show an accuracy of 56%. Per the Action Network, a prominent sports betting website, a profitable bettor must win at least 52.4% of their bets. The Action Network would consider winning at a 56% rate to be "a good year". ([Source](https://www.actionnetwork.com/legal-online-sports-betting/sports-betting-survey-gender-income-winning-percentage-may-24))
+
+#### Confusion Matrix
+The model correctly predicted the under 536 times. An incorrect under prediction was made 419 times. It correctly predicted the over 461 times. An incorrect over prediction was made 362 times. That results in an accuracy of 56.1%.
+
+#### Conclusion
+Our model was able to show an accuracy of 56%. Per the Action Network, a prominent sports betting website, a profitable bettor must win at least 52.4% of their bets to overcome the "juice". The Action Network would consider winning at a 55% rate to be "a good year". ([Source](https://www.actionnetwork.com/legal-online-sports-betting/sports-betting-survey-gender-income-winning-percentage-may-24))
