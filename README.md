@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/107162310/202570496-780269f3-3276-4da7-afae-70054a9c7e8c.png)
+
 ## Topic
 The federal law prohibiting sports gambling in the US was overturned by the Supreme Court in 2018. Over 30 states have since legalized the activity, with nearly two dozen also allowing online gambling (as opposed to just in person at a sportsbook within a casino). During 2021, an estimated 25% of adults bet on sports in some capacity*. With this growth in popularity, we set out to build a model to help bettors predict the outcomes of America's most popular sport: the National Football League.
 
@@ -71,6 +73,7 @@ The data was split into training and testing sets using the Sklearn train_test_s
 ### Results of the Model
 
 #### Confusion Matrix
+![image](https://user-images.githubusercontent.com/107162310/202570309-81be7493-3bf8-48f8-b8f2-3404c764272f.png)
 The model correctly predicted the under 536 times. An incorrect under prediction was made 419 times. It correctly predicted the over 461 times. An incorrect over prediction was made 362 times. That results in an accuracy of 56.1%.
 
 #### Conclusion
