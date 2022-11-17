@@ -1,3 +1,5 @@
+
+
 ## Topic
 The federal law prohibiting sports gambling in the US was overturned by the Supreme Court in 2018. Over 30 states have since legalized the activity, with nearly two dozen also allowing online gambling (as opposed to just in person at a sportsbook within a casino). During 2021, an estimated 25% of adults bet on sports in some capacity*. With this growth in popularity, we set out to build a model to help bettors predict the outcomes of America's most popular sport: the National Football League.
 
@@ -59,4 +61,7 @@ The team was able to apply some of its deep knowledge and interest in NFL data w
 
 #### Training Data
 The data was split into training and testing sets using the Sklearn train_test_split function. By default, this function assigns 75% of the dataset to be used during the training of the model while the remaining 25% is used to test the model.
+
+### Conclusion
+The Action Network estimates that to be profitable, a bettor must win at least 52.4% of their bets. Our model was successfully able to exceed that threshold and could theoretically provide bettors with a profit over time.
 
