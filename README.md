@@ -74,6 +74,7 @@ The data was split into training and testing sets using the Sklearn train_test_s
 
 #### Confusion Matrix
 ![image](https://user-images.githubusercontent.com/107162310/202570309-81be7493-3bf8-48f8-b8f2-3404c764272f.png)
+
 The model correctly predicted the under 536 times. An incorrect under prediction was made 419 times. It correctly predicted the over 461 times. An incorrect over prediction was made 362 times. That results in an accuracy of 56.1%.
 
 #### Conclusion
