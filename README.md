@@ -76,4 +76,3 @@ The model correctly predicted the under 536 times. An incorrect under prediction
 
 #### Conclusion
 Our model was able to show an accuracy of 56%. Per the Action Network, a prominent sports betting website, a profitable bettor must win at least 52.4% of their bets to overcome the "juice". The Action Network would consider winning at a 55% rate to be "a good year". ([Source](https://www.actionnetwork.com/legal-online-sports-betting/sports-betting-survey-gender-income-winning-percentage-may-24))
-
