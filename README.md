@@ -70,5 +70,10 @@ The team was able to apply some of its deep knowledge and interest in NFL data w
 The data was split into training and testing sets using the Sklearn train_test_split function. By default, this function assigns 75% of the dataset to be used during the training of the model while the remaining 25% is used to test the model.
 
 ### Results of the Model
+
+#### Confusion Matrix
+The model correctly predicted the under 536 times. An incorrect under prediction was made 419 times. It correctly predicted the over 461 times. An incorrect over prediction was made 362 times. That results in an accuracy of 56.1%.
+
+#### Conclusion
 Our model was able to show an accuracy of 56%. Per the Action Network, a prominent sports betting website, a profitable bettor must win at least 52.4% of their bets to overcome the "juice". The Action Network would consider winning at a 55% rate to be "a good year". ([Source](https://www.actionnetwork.com/legal-online-sports-betting/sports-betting-survey-gender-income-winning-percentage-may-24))
 
