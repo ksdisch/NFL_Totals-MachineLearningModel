@@ -1,5 +1,3 @@
-
-
 ## Topic
 The federal law prohibiting sports gambling in the US was overturned by the Supreme Court in 2018. Over 30 states have since legalized the activity, with nearly two dozen also allowing online gambling (as opposed to just in person at a sportsbook within a casino). During 2021, an estimated 25% of adults bet on sports in some capacity*. With this growth in popularity, we set out to build a model to help bettors predict the outcomes of America's most popular sport: the National Football League.
 
@@ -13,6 +11,7 @@ As more states continue to legalize sports betting, the industry continues to gr
 ## Questions We Hope to Answer With the Data
 - Will a given NFL game's total score go over or fall under the total set by the oddsmakers?
 - Can we build a model accurate enough that a bettor who followed its results could overcome the inherent advantage sportsbooks have (also known as the "juice" or "vigorish") and be profitable over time?
+
 
 ## Data Source(s)
 - [spreadspoke_scores.csv](https://github.com/ksdisch/nfl-ml/blob/main/Resources/spreadspoke_scores.csv) - csv file found on Kaggle containing National Football League (NFL) game results dating back to 1966 with betting odds information since 1979. 
