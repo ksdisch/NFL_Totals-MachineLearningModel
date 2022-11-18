@@ -50,19 +50,13 @@ Please click this [link](https://docs.google.com/presentation/d/1on4g_O0ENLiW1l6
 Please click this [link](https://public.tableau.com/app/profile/kyle.disch3835/viz/nfl-ml-story/Story1?publish=yes) to view the Tableau interactive dashboard.
 
 ### Model
-Data was read into the Machine Learning model using a Jupyter notebook. Output labels were defined based on if the actual final score was higher than the Over Under Total (1 = Over, 0 = Under). Input data was preprocessed and fed into several Machine Learning Algorithms and compared based on their Accuracy Scores.
+Data was read into the Machine Learning model using a Jupyter notebook. Output labels were defined based on if the actual final score was higher than the Over Under Total (1 = Over, 0 = Under). Input data was preprocessed and fed into several Machine Learning Algorithms and compared based on their Accuracy Scores. In between segments of the project, the dataset was expanded. This resulted in changes to the accuracy scores of the many models we had been testing. Here are the updated scores:
 
 <img width="218" alt="Screenshot 2022-11-11 155647" src="https://user-images.githubusercontent.com/102050273/201431901-26465a23-4abb-41ae-b78b-b1b50ded69b1.png">
 
-4 of the 20 models tested reached an arbitrary limit of 55% Accuracy Score. Those models were the Logistic Classifier, Ridge Classifier, Linear Discriminant Analysis Classifier, and the Linear Support Vector Machine (SVM) Classifier.
+4 of the 20 models tested reached an arbitrary limit of 55% Accuracy Score. Those models were the Logistic Classifier, Ridge Classifier, Linear Discriminant Analysis Classifier, and the Linear Support Vector Machine (SVM) Classifier. The Logistic Regression Classifier produced the best results, so we will stick with that model.
 
 The benefits of continuing to use the Logistic Regression Classifier include its ease of implementation, interpretation, and efficiency during training. Our use case also benefits from being able to easily extend the number of classes (multinomial regression). One of its limitations include its assumption of linearity between the dependent and independent variable.
-
-The benefits of continuing to use the Ridge Classifier include its ability to help reduce sensitivity to noisy data (like a game where 22 people run all over a field in pursuit of an oblong shaped pigskin) by penalizing the coefficients of highly correlated variables. One of its limitations for our purposes would be that it may require more data to be highly accurate than a sport with only 500+ datapoints per year can provide. ([Source](https://vitalflux.com/ridge-regression-concepts-python-example/) by Ajitesh Kumar)
-
-The benefits of continuing to use the LDA classifier include its ease of use and speed. One of its limitations include its assumption that the data has a normal distribution. LDA classifiers are used in facial recognition and the medical field. ([Source](https://www.knowledgehut.com/blog/data-science/linear-discriminant-analysis-for-machine-learning) by Priyankur Sarkar)
-
-The benefits of continuing to use the Linear SVM Classifier include its effectiveness in high dimensional spaces and that it is relatively memory efficient. One of its limitations is that it generally does not perform well with a noisy dataset that has overlapping features.
 
 #### Feature Engineering & Selection
 The team was able to apply some of its deep knowledge and interest in NFL data when it came time to engineer and select the features to be used in the model. For instance, DVOA and pace data came with multiple columns looking at those statistics from several angles for both teams in a given matchup, including cumulative or weighted columns. In some cases, we could intuit that there was no need to ask the model to include some base features when the cumulative or weighted features already addressed them. To be certain, during segment two of the project, several suspect features were isolated and removed from the model testing and the accuracy scores were compared to the results of the model when it had included them. For results that showed no change to accuracy, or even an improvement, those features were kept out of the final model.
