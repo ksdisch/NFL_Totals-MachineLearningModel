@@ -9,8 +9,6 @@ Tableau is one of the most widely used data analysis and visualization tools in 
 ## Projection Accuracy Dashboard
 This dashboard essentially shows how accurate point total projections have been over time, and how they are improving. The significance of this dashboard, in the context of our model’s accuracy relative to the previously mentioned 52.4% minimum win rate, is that it shows people why they should follow our model’s predictions. 
 
-
-
 ## Interactive Element(s)
 To allow users to interact with our dashboard, this chart allows users to select an NFL team and examine scoring trends in that team’s games.
 
